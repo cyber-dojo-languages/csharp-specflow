@@ -1,0 +1,16 @@
+
+{
+  "visible_filenames": [
+    "Hiker.cs",
+    "HikerSteps.cs",
+    "HikerSpec.feature",
+    "cyber-dojo.sh",
+    "RunTests.dll.config"
+  ],
+
+  "filename_extension" : ".cs",
+
+  "display_name": "C#, SpecFlow",
+
+  "image_name": "cyberdojofoundation/csharp_specflow"
+}
