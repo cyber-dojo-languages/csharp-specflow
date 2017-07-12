@@ -1,5 +1,5 @@
-FROM       cyberdojofoundation/csharp_nunit
-MAINTAINER Seb Rose <seb@claysnow.co.uk>
+FROM  cyberdojofoundation/csharp_nunit
+LABEL maintainer=seb@claysnow.co.uk
 
 COPY SpecFlow_v1.9.0_bin.zip .
 RUN unzip SpecFlow_v1.9.0_bin.zip
