@@ -27,9 +27,11 @@ export MONO_PATH=${NUNIT_PATH}
 mono /specflow/specflow.exe generateall RunTests.csproj
 
 mcs -t:library \
-  -r:/usr/lib/mono/SpecFlow/TechTalk.SpecFlow.dll \
+  -r:/specflow/TechTalk.SpecFlow.dll \
   -r:${NUNIT_PATH}/nunit.framework.dll \
   -out:RunTests.dll *.cs
+
+cp /specflow/* .
 
 if [ $? -eq 0 ]; then
   NUNIT_RUNNERS_PATH=/nunit/NUnit.Runners.2.6.1/tools
