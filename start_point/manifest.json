@@ -5,8 +5,7 @@
     "HikerSteps.cs",
     "HikerSpec.feature",
     "cyber-dojo.sh",
-    "RunTests.dll.config",
-    "App.config"
+    "specflow.json"
   ],
 
   "filename_extension" : ".cs",

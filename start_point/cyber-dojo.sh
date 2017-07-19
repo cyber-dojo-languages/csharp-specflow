@@ -16,7 +16,7 @@ done
 
 echo "  </ItemGroup>" >> $CSPROJ
 echo "  <ItemGroup>" >> $CSPROJ
-echo "    <None Include=\"App.config\" />" >> $CSPROJ
+echo "    <None Include=\"specflow.json\" />" >> $CSPROJ
 echo "  </ItemGroup>" >> $CSPROJ
 echo "</Project>" >> $CSPROJ
 
