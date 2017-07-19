@@ -1,22 +1,14 @@
 FROM  cyberdojofoundation/csharp_nunit
-LABEL maintainer=seb@claysnow.co.uk
+LABEL maintainer=seb@cucumber.io
 
-COPY SpecFlow_v1.9.0_bin.zip .
-RUN unzip SpecFlow_v1.9.0_bin.zip
+COPY specflow.2.2.0.nupkg .
+RUN unzip specflow.2.2.0.nupkg
 WORKDIR tools
-RUN gacutil -i Gherkin.dll -package SpecFlow
-RUN gacutil -i IKVM.OpenJDK.Core.dll     -package SpecFlow
-RUN gacutil -i IKVM.OpenJDK.Security.dll -package SpecFlow
-RUN gacutil -i IKVM.OpenJDK.Text.dll     -package SpecFlow
-RUN gacutil -i IKVM.OpenJDK.Util.dll     -package SpecFlow
-RUN gacutil -i IKVM.Runtime.dll          -package SpecFlow
+RUN gacutil -i Newtonsoft.Json.dll -package SpecFlow
 RUN gacutil -i TechTalk.SpecFlow.dll           -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.Generator.dll -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.Parser.dll    -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.Reporting.dll -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.Utils.dll     -package SpecFlow
 WORKDIR ..
 
-COPY /specflow.exe /specflow/
+RUN mkdir /specflow
+RUN cp tools/* /specflow/
 
 COPY red_amber_green.rb /usr/local/bin
