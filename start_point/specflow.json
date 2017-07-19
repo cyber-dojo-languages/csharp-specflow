@@ -1,6 +1,6 @@
 {
   "specflow": {
     "runtime": {"missingOrPendingStepsOutcome": "Error"},
-    "unitTestProvider": {"name": "NUnit.2"}
+    "unitTestProvider": {"name": "NUnit"}
   }
 }
