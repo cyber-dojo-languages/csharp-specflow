@@ -1,22 +1,16 @@
-FROM  cyberdojofoundation/csharp_nunit
-LABEL maintainer=seb@claysnow.co.uk
+FROM  cyberdojofoundation/csharp:4.6.1
+LABEL maintainer=seb@cucumber.io
 
-COPY SpecFlow_v1.9.0_bin.zip .
-RUN unzip SpecFlow_v1.9.0_bin.zip
-WORKDIR tools
-RUN gacutil -i Gherkin.dll -package SpecFlow
-RUN gacutil -i IKVM.OpenJDK.Core.dll     -package SpecFlow
-RUN gacutil -i IKVM.OpenJDK.Security.dll -package SpecFlow
-RUN gacutil -i IKVM.OpenJDK.Text.dll     -package SpecFlow
-RUN gacutil -i IKVM.OpenJDK.Util.dll     -package SpecFlow
-RUN gacutil -i IKVM.Runtime.dll          -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.dll           -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.Generator.dll -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.Parser.dll    -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.Reporting.dll -package SpecFlow
-RUN gacutil -i TechTalk.SpecFlow.Utils.dll     -package SpecFlow
-WORKDIR ..
+COPY packages.config .
 
-COPY /specflow.exe /specflow/
+RUN  apk add --update openssl \
+  && wget http://dist.nuget.org/win-x86-commandline/latest/nuget.exe \
+  && mono --runtime=v4.5 nuget.exe restore -PackagesDirectory . \
+  && mkdir /nunit \
+  && mv NUnit.*/lib                  /nunit \
+  && mv NUnit.ConsoleRunner.*/tools  /nunit
+
+RUN mkdir /specflow
+RUN mv SpecFlow.*/tools/* /specflow/
 
 COPY red_amber_green.rb /usr/local/bin
