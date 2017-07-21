@@ -35,5 +35,5 @@ cp /specflow/* .
 
 if [ $? -eq 0 ]; then
   NUNIT_RUNNERS_PATH=/nunit/tools
-  mono ${NUNIT_RUNNERS_PATH}/nunit3-console.exe ./RunTests.dll
+  mono ${NUNIT_RUNNERS_PATH}/nunit3-console.exe --noheader ./RunTests.dll
 fi
