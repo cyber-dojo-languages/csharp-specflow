@@ -24,6 +24,7 @@ NUNIT_PATH=/nunit/lib/net45
 export MONO_PATH=${NUNIT_PATH}
 
 # generate 'code behind'
+find . -iname '*.feature.cs' -exec rm '{}' \;
 mono /specflow/specflow.exe generateall RunTests.csproj
 
 mcs -t:library \
