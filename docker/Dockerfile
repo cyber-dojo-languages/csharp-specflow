@@ -1,4 +1,4 @@
-FROM  cyberdojofoundation/csharp:5.0.0
+FROM  cyberdojofoundation/csharp:5.4.1.0
 LABEL maintainer=seb@cucumber.io
 
 COPY packages.config .
