@@ -10,6 +10,19 @@
     "specflow.json"
   ],
 
+  "hidden_filenames": [
+    "specflow\\.json",
+    "specflow\\.exe\\.config",
+    "plugincompability\\.config",
+    "app\\.config",
+    "TestResult\\.xml",
+    "RunTests\\.csproj",
+    "TechTalk\\.SpecFlow\\.tasks",
+    "TechTalk\\.SpecFlow\\.targets",
+    "TechTalk\\.SpecFlow\\.props",
+    ".*\\.feature\.cs"
+  ],
+
   "image_name": "cyberdojofoundation/csharp_specflow",
 
   "filename_extension": [ ".cs", ".feature" ],
