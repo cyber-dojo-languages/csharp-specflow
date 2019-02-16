@@ -25,7 +25,5 @@
 
   "image_name": "cyberdojofoundation/csharp_specflow",
 
-  "filename_extension": [ ".cs", ".feature" ],
-
-  "runner_choice": "stateless"
+  "filename_extension": [ ".cs", ".feature" ]
 }
