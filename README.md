@@ -1,6 +1,7 @@
 
-<img src="https://raw.githubusercontent.com/cyber-dojo/nginx/master/images/home_page_logo.png" alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
+[![CircleCI](https://circleci.com/gh/cyber-dojo-languages/csharp-specflow.svg?style=svg)](https://circleci.com/gh/cyber-dojo-languages/csharp-specflow)
 
-# C#, specflow
+# display_name="C#, SpecFlow"
+# image_name="cyberdojofoundation/csharp_specflow"
 
-![Build Status](https://travis-ci.org/cyber-dojo-languages/csharp-specflow.svg?branch=master)
+![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snapshot.png)
