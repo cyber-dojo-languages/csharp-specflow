@@ -16,7 +16,7 @@ public class HikerSteps
     [When(@"I ask for the meaning")]
     public void WhenIAskForTheMeaning()
     {
-        answer = Hiker.Answer;
+        answer = Hiker.Answer();
     }
 
     [Then(@"the answer is (.*)")]
