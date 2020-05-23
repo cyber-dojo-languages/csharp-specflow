@@ -32,24 +32,30 @@ function delete_files()
 # ------------------------------------------------------------------------
 # build project file
 {
-  echo "<Project xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">"
-  echo "  <ItemGroup>"
+  cat <<PREFIX
+  <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+PREFIX
   for file in *.feature
   do
-    echo "    <None Include=\"${file}\">"
-    echo "      <Generator>SpecFlowSingleFileGenerator</Generator>"
-    echo "      <LastGenOutput>${file}.cs</LastGenOutput>"
-    echo "    </None>"
+    cat <<EACH_FILE
+        <None Include="${file}">
+          <Generator>SpecFlowSingleFileGenerator</Generator>
+          <LastGenOutput>${file}.cs</LastGenOutput>
+        </None>
+EACH_FILE
   done
-  echo "  </ItemGroup>"
-  echo "  <ItemGroup>"
-  echo "    <None Include=\"specflow.json\" />"
-  echo "  </ItemGroup>"
-  echo "</Project>"
+  cat <<SUFFIX
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="specflow.json" />
+    </ItemGroup>
+  </Project>
+SUFFIX
 } > RunTests.csproj
 
 # build specflow.json
-cat << EOF > specflow.json
+cat <<EOF > specflow.json
 {
   "specflow": {
     "runtime": {"missingOrPendingStepsOutcome": "Error"},
