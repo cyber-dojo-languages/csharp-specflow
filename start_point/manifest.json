@@ -1,4 +1,3 @@
-
 {
   "image_name": "cyberdojofoundation/csharp_specflow",
   "display_name": "C#, SpecFlow",
@@ -6,22 +5,9 @@
     "Hiker.cs",
     "HikerSteps.cs",
     "HikerSpec.feature",
-    "cyber-dojo.sh",
-    "specflow.json"
+    "cyber-dojo.sh"
   ],
   "filename_extension": [ ".cs", ".feature" ],
   "max_seconds": 10,
-  "tab_size": 4,
-  "hidden_filenames": [
-    "specflow\\.json",
-    "specflow\\.exe\\.config",
-    "plugincompability\\.config",
-    "app\\.config",
-    "TestResult\\.xml",
-    "RunTests\\.csproj",
-    "TechTalk\\.SpecFlow\\.tasks",
-    "TechTalk\\.SpecFlow\\.targets",
-    "TechTalk\\.SpecFlow\\.props",
-    ".*\\.feature\.cs"
-  ]
+  "tab_size": 4
 }
